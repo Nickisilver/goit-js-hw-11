@@ -1,1 +1,0 @@
-{"mappings":"AAAiBA,SAASC,cAAc","sources":["src/js/index.js"],"sourcesContent":["const inputRef = document.querySelector('[name=\"searchQuery\"]')\n"],"names":["document","querySelector"],"version":3,"file":"index.c95823db.js.map"}
