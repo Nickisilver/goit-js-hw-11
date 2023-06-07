@@ -9,6 +9,12 @@ const btnLoadMore = document.querySelector('.load-more');
 const loader = document.querySelector('.loader');
 const limit = 40;
 
+const options = {
+  captionDelay: 250,
+  captionsData: 'alt',
+};
+let lightbox = new SimpleLightbox('.gallery a', options);
+
 let pageToFetch = 1;
 let queryToFetch = '';
 
@@ -80,12 +86,8 @@ async function getEvents(query, page) {
     }
     
     createGalleryItem(res);
+    lightbox.refresh();
 
-  const options = {
-    captionDelay: 250,
-    captionsData: 'alt',
-  };
-  const lightbox = new SimpleLightbox('.gallery a', options);
 
   if (pageToFetch === 1) {
     Notiflix.Notify.success(`"Hooray! We found ${res.totalHits} images."`);
@@ -110,7 +112,7 @@ function onFormSubmit(e) {
   btnLoadMore.classList.add('invisible');
   getEvents(queryToFetch, pageToFetch);
   form.reset();
-  // lightbox.refresh();
+ 
 }
 
 btnLoadMore.addEventListener('click', onBtnLoadMore);
