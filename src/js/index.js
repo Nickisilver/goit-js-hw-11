@@ -41,7 +41,7 @@ function createGalleryItem(arr) {
   const markup = arr.hits
     .map(
       item => `
-     <a href="${item.largeImageURL}">
+     <a class="gallery-link" href="${item.largeImageURL}">
   <div class="photo-card">
   <img src="${item.webformatURL}" alt="${item.tags}" loading="lazy" />
   <div class="info">
